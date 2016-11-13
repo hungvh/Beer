@@ -1,0 +1,828 @@
+
+@import "reset.css";
+@import "grid.css";
+@import "jquery-ui-1.9.2.custom.css";
+@import "jquery.fancybox-1.3.4.css";
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+    display: block;
+}
+mark, rp, rt, ruby, summary, time {
+    display: inline;
+}
+body {
+    color: #535353;
+    font: 13px/18px "Trebuchet MS",sans-serif;
+    height: 100%;
+    min-height: 1000px;
+    min-width: 950px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+body p a {
+    text-decoration: none;
+}
+body p a:hover {
+    text-decoration: underline;
+}
+h1 {
+    display: inline-block;
+    margin-top: 75px;
+    position: relative;
+}
+h1 > a {
+    background: rgba(0, 0, 0, 0) url("../images/logo.png") no-repeat scroll center top;
+    display: inline-block;
+    height: 277px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 399px;
+}
+h2 {
+    color: #fff;
+    font: 700 30px/1.2em "Open Sans Condensed",sans-serif;
+    padding-bottom: 18px;
+    text-transform: uppercase;
+}
+h2.type2 {
+    color: #fff;
+    font: 400 47px/1.2em "Six Caps",sans-serif;
+    margin-top: -19px;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+}
+h3 {
+    color: #fff;
+    font: 11px/18px "Trebuchet MS",sans-serif;
+    padding-bottom: 14px;
+    text-transform: uppercase;
+}
+h3 > a {
+    color: inherit;
+}
+h3 > a:hover {
+    text-decoration: underline;
+}
+h4 {
+    color: #9a7b38;
+    font-weight: 400;
+}
+p {
+    padding-bottom: 18px;
+}
+figure {
+    display: inline-block;
+    position: relative;
+}
+figure > * {
+    border: 1px solid #2d2c2c;
+}
+#glob {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.spinner {
+    background: #171717 url("../images/ajax-loader.gif") no-repeat scroll 50% 50%;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+#bgStretch {
+    z-index: 1;
+}
+#bgStretch > img {
+    background: #171717 none repeat scroll 0 0;
+}
+header, footer {
+    position: absolute;
+    width: 100%;
+}
+header {
+    height: 327px;
+    text-align: center;
+    top: 0;
+    z-index: 1;
+}
+footer {
+    bottom: 0;
+    height: 185px;
+}
+footer > div:first-child {
+    background: rgba(0, 0, 0, 0) url("../images/footer_bg.png") repeat-x scroll center top;
+    height: 52px;
+}
+footer > div:first-child + div {
+    background: rgba(0, 0, 0, 0) url("../images/content_bg.jpg") repeat scroll 0 0;
+    height: 0;
+}
+footer > div:first-child + div + div {
+    background: rgba(0, 0, 0, 0) url("../images/footer_bg.png") repeat-x scroll center bottom;
+    height: 133px;
+}
+footer p {
+    color: #535353;
+    font: 700 11px/1.2em "Open Sans",sans-serif;
+    padding-top: 117px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1;
+}
+footer p a {
+    color: #535353;
+}
+.footer_logo {
+    background: rgba(0, 0, 0, 0) url("../images/footer_logo.png") no-repeat scroll center bottom;
+    height: 106px;
+    left: 0;
+    position: absolute;
+    top: 12px;
+    width: 100%;
+}
+.pagin {
+    position: absolute;
+    text-align: center;
+    top: -34px;
+    width: 100%;
+    z-index: -1;
+}
+.pagin > ul {
+    display: inline-block;
+}
+.pagin > ul > li {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 18px;
+}
+.pagin > ul > li > a, .pagin > ul > li > a > span {
+    background: rgba(0, 0, 0, 0) url("../images/pagin_bg.png") no-repeat scroll center top;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.pagin > ul > li > a > span {
+    background-position: center bottom;
+    opacity: 1;
+    transition: opacity 0.4s ease-out 0s;
+}
+.pagin > ul > li.active > a > span, .pagin > ul > li > a:hover > span {
+    opacity: 0;
+}
+.menu {
+    display: inline-block;
+    height: 50px;
+    margin-top: 1px;
+    position: relative;
+    z-index: 500;
+}
+#menu {
+    white-space: nowrap;
+}
+#menu > li {
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+    text-align: center;
+}
+#menu > li:first-child {
+    margin-left: 0;
+}
+#menu > li.last {
+    margin-right: 0;
+}
+#menu > li > a {
+    display: inline-block;
+    padding: 16px 0;
+    position: relative;
+    width: 146px;
+}
+#menu > li > a > span {
+    color: #fff;
+    display: inline-block;
+    font: 700 16px/1.2em "Open Sans Condensed",sans-serif;
+    position: relative;
+    text-shadow: 1px 1px 1px #000;
+    text-transform: uppercase;
+    z-index: 10;
+}
+#menu > li > a > strong {
+    background: rgba(0, 0, 0, 0) url("../images/menu_bg.jpg") repeat scroll 0 0;
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.submenu_1, .submenu_2 {
+    background: rgba(0, 0, 0, 0) url("../images/submenu_bg.jpg") repeat scroll 0 0;
+    bottom: 51px;
+    left: -14px;
+    position: absolute;
+    text-align: left;
+    width: 248px;
+    z-index: 9100;
+}
+.submenu_1 {
+    overflow: hidden;
+}
+.submenu_1 li {
+    display: block;
+    margin: 0 0 5px 40px;
+    position: relative;
+}
+.submenu_1 li:first-child {
+    padding-top: 23px;
+}
+.submenu_1 li.last {
+    padding-bottom: 7px;
+}
+.submenu_1 a {
+    color: #fff;
+    display: inline-block;
+    font: 700 14px/1.2em "Open Sans Condensed",sans-serif;
+    position: relative;
+    text-shadow: 1px 1px 1px #000;
+    text-transform: uppercase;
+    transition: color 0.4s ease-out 0s;
+}
+.submenu_1 li > a:hover, .submenu_1 li.sfHover > a {
+    color: #535353 !important;
+}
+.submenu_2 {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    left: -23px;
+    position: relative;
+    top: 10px;
+    width: 220px;
+}
+.submenu_2 li:first-child {
+    padding-top: 0;
+}
+.submenu_2 li.last {
+    margin-bottom: 0;
+    padding-bottom: 53px;
+}
+.submenu_1 li > a:hover, .submenu_1 li.sfHover > a {
+    color: #535353 !important;
+}
+.submenu_1, .submenu_2 {
+    display: none;
+}
+#splash {
+    display: inline-block;
+    height: 360px;
+    margin-top: 375px;
+    position: relative;
+    width: 950px;
+    z-index: 0;
+}
+#splash > ul > li {
+    display: inline-block;
+    margin-right: 46px;
+    position: relative;
+    width: 190px;
+}
+#splash > ul > li.last {
+    margin-right: 0;
+}
+#splash > ul > li > a {
+    background: rgba(0, 0, 0, 0) url("../images/splash_tem_bg.png") no-repeat scroll center center;
+    display: block;
+    margin-bottom: 2px;
+    position: relative;
+}
+#splash > ul > li > p {
+    position: relative;
+    z-index: 10;
+}
+.fontStyle1, .fontStyle2, .fontStyle3, .readMore2, .readMore {
+    color: #fff;
+    display: inline-block;
+    font: 700 24px/1.2em "Open Sans Condensed",sans-serif;
+    padding-bottom: 0;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+.readMore2 > span, .readMore > span {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.fontStyle1 {
+    padding-bottom: 6px;
+}
+.fontStyle2 {
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: -7px;
+    padding-bottom: 13px;
+}
+.fontStyle3 {
+    font: bold 13px/18px Trebuchet MS,sans-serif;
+    padding-bottom: 15px;
+    text-shadow: none;
+    text-transform: none;
+}
+.readMore2, .readMore {
+    font-size: 16px;
+    text-decoration: none;
+}
+.readMore2:hover, .readMore:hover {
+    text-decoration: none;
+}
+#content {
+    bottom: 0;
+    height: 1000px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 250;
+}
+#content > ul {
+    height: 449px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    top: 380px;
+    width: 100%;
+    z-index: 250;
+}
+#content > ul > li:first-child {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 0 !important;
+}
+#content > ul > li {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+.readMore {
+    color: #535353;
+    font-size: 14px;
+    text-shadow: none;
+}
+.readMore > span {
+    background: #535353 none repeat scroll 0 0;
+    box-shadow: none;
+}
+.readMore:hover {
+    text-decoration: none;
+}
+.list1 > li {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    width: 189px;
+}
+.list1 > li.right {
+    margin-right: 0;
+}
+.list1 > li > p {
+    display: inline-block;
+    font-size: 11px;
+    padding-bottom: 12px;
+    position: relative;
+}
+.list1 > li > p > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+.list1 > li > p > a > span {
+    color: #9a7b38;
+    padding-right: 3px;
+}
+.list1 > li > p > a:hover {
+    text-decoration: none;
+}
+.list1 > li > p > a > strong, .list1 > li > p > a > strong > span {
+    background: #fff none repeat scroll 0 0;
+    bottom: 13px;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 0;
+}
+.list1 > li > p > a > strong > span {
+    background: #9a7b38 none repeat scroll 0 0;
+    bottom: 0;
+    left: 100%;
+    width: 0;
+}
+.list2 > li {
+    background: rgba(0, 0, 0, 0) url("../images/list_icon2.png") no-repeat scroll -2px 3px;
+    margin-bottom: 14px;
+    padding-left: 15px;
+    position: relative;
+}
+.list2 > li.last {
+    margin-bottom: 0;
+}
+.list2 > li > h3 {
+    padding-bottom: 2px;
+}
+.list2 > li > p {
+    padding-bottom: 0;
+}
+.list3 {
+    margin-top: -1px;
+}
+.list3 > li {
+    background: rgba(0, 0, 0, 0) url("../images/hline.png") repeat-x scroll 0 bottom;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    position: relative;
+}
+.list3 > li > p {
+    padding-bottom: 0;
+}
+.list3 > li > p > span {
+    background: rgba(0, 0, 0, 0) url("../images/list_icon.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 5px;
+    margin: 7px 11px 7px 0;
+    position: relative;
+    width: 3px;
+}
+.list3 > li > p > a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.4s ease-out 0s;
+}
+.list3 > li > p > a:hover {
+    color: #535353;
+    text-decoration: none;
+}
+.list4 {
+    margin-top: 5px;
+}
+.list4 > li {
+    display: inline-block;
+    margin-right: 6px;
+    position: relative;
+    width: 150px;
+}
+.list4 > li.right {
+    margin-right: 0;
+}
+.list4 > li > figure > a {
+    display: block;
+    height: 231px;
+    position: relative;
+    width: 148px;
+}
+.list4 > li > h3 {
+    margin-top: 20px;
+    padding-bottom: 0;
+}
+.list4 > li > p {
+    margin-top: -1px;
+}
+.list5 {
+    margin-top: 0;
+}
+.list5 > li {
+    display: block;
+    margin-bottom: 26px;
+    position: relative;
+}
+.list5 > li > figure {
+    float: left;
+    margin: 5px 16px 0 0;
+}
+.list5 > li > div {
+    overflow: hidden;
+}
+.list5 > li > div > h3 {
+    padding-bottom: 5px;
+}
+.list5 > li > div > h4 {
+    padding-bottom: 18px;
+}
+.list5 > li > div > p {
+    padding-bottom: 1px;
+}
+.banner1, .banner2, .banner3 {
+    background: rgba(0, 0, 0, 0) url("../images/banner_bg.jpg") repeat scroll 0 0;
+    display: block;
+    margin-bottom: 10px;
+    padding: 26px 0 7px;
+    position: relative;
+    width: 228px;
+}
+.banner1 > p, .banner2 > p, .banner3 > p {
+    display: inline-block;
+    position: relative;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: color 0.4s ease-out 0s;
+}
+.banner1 > p:first-child, .banner2 > p:first-child, .banner3 > p:first-child {
+    float: left;
+    font: 700 21px/18px "Open Sans Condensed",sans-serif;
+}
+.banner1 > p:first-child + p, .banner2 > p:first-child + p, .banner3 > p:first-child + p {
+    display: block;
+    font: 400 41px/40px "Six Caps",sans-serif;
+    overflow: hidden;
+}
+.banner1 > p:first-child {
+    color: #4b4b4b;
+    margin-right: 4px;
+    padding: 2px 0 0 24px;
+    text-align: right;
+    width: 62px;
+}
+.banner1 > p:first-child + p {
+    color: #9a7b38;
+}
+.banner1 > p:first-child + p > span, .banner2 > p:first-child + p > span, .banner3 > p:first-child + p > span {
+    display: inline-block;
+    height: 11px;
+    margin: 16px 0 0 3px;
+    position: relative;
+    width: 6px;
+}
+.banner1 > p:first-child + p > span > strong, .banner2 > p:first-child + p > span > strong, .banner3 > p:first-child + p > span > strong {
+    background: rgba(0, 0, 0, 0) url("../images/banner_arrow_hover.png") no-repeat scroll 0 center;
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.4s ease-out 0s;
+    width: 100%;
+}
+.banner1 > p:first-child + p > span {
+    background: rgba(0, 0, 0, 0) url("../images/banner_arrow1.png") no-repeat scroll 0 center;
+}
+.banner2 {
+    padding: 26px 0 13px;
+}
+.banner2 > p:first-child {
+    color: #9a7b38;
+    display: block;
+    float: none;
+    font-size: 24px;
+    line-height: 1.2em;
+    margin-top: -3px;
+    padding-left: 37px;
+}
+.banner2 > p:first-child + p {
+    color: #9c1f06;
+    font-size: 58px;
+    line-height: 48px;
+    margin-top: -20px;
+    padding-left: 37px;
+}
+.banner2 > p:first-child + p > span {
+    background: rgba(0, 0, 0, 0) url("../images/banner_arrow2.png") no-repeat scroll 0 center;
+    margin: 19px 0 0 5px;
+}
+.banner3 {
+    padding: 17px 0 3px;
+}
+.banner3 > p:first-child {
+    color: #72971b;
+    font-size: 19px;
+    line-height: 18px;
+    padding: 11px 0 0 37px;
+    width: 74px;
+}
+.banner3 > p:first-child + p {
+    color: #72971b;
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 0;
+}
+.banner3 > p:first-child + p > span {
+    background: rgba(0, 0, 0, 0) url("../images/banner_arrow3.png") no-repeat scroll 0 center;
+    margin: 20px 0 0 1px;
+}
+.banner1:hover > p, .banner2:hover > p, .banner3:hover > p {
+    color: #535353;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
+}
+.banner1:hover > p:first-child + p, .banner2:hover > p:first-child + p, .banner3:hover > p:first-child + p {
+    color: #535353;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
+}
+.banner1:hover > p:first-child + p > span > strong, .banner2:hover > p:first-child + p > span > strong, .banner3:hover > p:first-child + p > span > strong {
+    opacity: 1;
+}
+.vline, .vline2 {
+    background: rgba(0, 0, 0, 0) url("../images/vline.png") no-repeat scroll 0 center;
+}
+.vline2 {
+    background-position: 0 59px;
+}
+.scroll {
+    float: left;
+}
+.outside .scroll, .outside .scroll2 {
+    height: 256px;
+    width: 100%;
+}
+.outside .scroll2 {
+    height: 306px;
+}
+.outside .scroll {
+    margin-bottom: 30px;
+}
+.scroll-btns {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 66px;
+    z-index: 200;
+}
+.btndown, .btnup {
+    display: inline-block;
+    float: left;
+    height: 27px;
+    margin-left: 3px;
+    position: relative;
+    width: 27px;
+}
+.btndown, .btndown > span {
+    background: rgba(0, 0, 0, 0) url("../images/arrow_down.png") no-repeat scroll center bottom;
+}
+.btnup, .btnup > span {
+    background: rgba(0, 0, 0, 0) url("../images/arrow_up.png") no-repeat scroll center bottom;
+}
+.btndown > span, .btnup > span {
+    background-position: center top;
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.4s ease-out 0s;
+    width: 100%;
+}
+.btndown:hover > span, .btnup:hover > span {
+    opacity: 1;
+}
+.sitem_over {
+    background: rgba(0, 0, 0, 0) url("../images/pic_bg_over.png") repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.sitem_over > strong {
+    background: rgba(0, 0, 0, 0) url("../images/icon_zoom.png") no-repeat scroll center center;
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.padding1 {
+    padding-top: 62px;
+}
+.padding2 {
+    padding-top: 21px;
+}
+.margin1 {
+    margin: 5px 15px 0 0;
+}
+.margin2 {
+    margin: 4px 0 21px;
+}
+.margin3 {
+    margin: 6px 20px 0 1px;
+}
+.color1 {
+    color: #9a7b38;
+}
+.width1 {
+    display: inline-block;
+    width: 75px;
+}
+.width2 {
+    display: inline-block;
+    width: 58px;
+}
+.fleft {
+    float: left;
+}
+.fright {
+    float: right;
+}
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+.box {
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+}
+.nopad {
+    padding: 0;
+}
+.clear {
+    clear: both;
+    line-height: 0;
+}
+.rel {
+    position: relative;
+}
+.google_map {
+    background-color: #171717;
+    background-image: url("../images/ajax-loader.gif");
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 283px;
+    overflow: hidden;
+    position: relative;
+    width: 438px;
+}
+#form1 {
+    height: 318px;
+    margin-top: 5px;
+    position: relative;
+}
+#form1 input, #form1 textarea, #form1 .success {
+    background: rgba(0, 0, 0, 0) url("../images/form_bg.jpg") repeat scroll 0 0;
+    border: 1px solid #2d2c2c;
+    box-shadow: none;
+    color: #535353;
+    margin: 0;
+    outline: medium none;
+    padding: 6px 9px;
+    position: relative;
+    width: 210px;
+}
+#form1 .success {
+    left: 0;
+    padding: 37px 9px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 100;
+}
+#form1 textarea {
+    height: 112px;
+    overflow: auto;
+    resize: none;
+    width: 210px;
+}
+#form1 label {
+    display: inline-block;
+    min-height: 40px;
+    position: relative;
+    width: 230px;
+}
+#form1 .error, #form1 .empty {
+    color: #fff;
+    display: none;
+    font-size: 10px;
+    position: absolute;
+    right: 1px;
+    text-align: right;
+    top: 0;
+}
+fieldset {
+    height: 210px;
+}
+.btns {
+    float: right;
+    padding: 22px 0 0;
+    position: relative;
+}
+.btns a {
+    display: inline-block;
+    margin-left: 14px;
+}
+input, select, textarea {
+    font: 13px/15px "Trebuchet MS",sans-serif;
+    vertical-align: middle;
+}
