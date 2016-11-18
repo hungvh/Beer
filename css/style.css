@@ -55,7 +55,7 @@ h2.type2 {
     text-transform: uppercase;
 }
 h3 {
-    color: #fff;
+    /*color: #fff;*/
     font: 11px/18px "Trebuchet MS",sans-serif;
     padding-bottom: 14px;
     text-transform: uppercase;
@@ -766,7 +766,7 @@ a {
     height: 283px;
     overflow: hidden;
     position: relative;
-    width: 438px;
+    width: 600px;
 }
 #form1 {
     height: 318px;
